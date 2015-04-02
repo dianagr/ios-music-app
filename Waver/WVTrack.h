@@ -13,5 +13,6 @@
 + (NSString *)titleKey;
 + (NSString *)durationKey;
 + (NSString *)streamURLKey;
++ (NSString *)artworkURLKey;
 
 @end

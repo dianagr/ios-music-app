@@ -22,4 +22,8 @@
   return @"stream_url";
 }
 
++ (NSString *)artworkURLKey {
+  return @"artwork_url";
+}
+
 @end

@@ -26,6 +26,10 @@
   }
 }
 
+- (void)viewDidLoad {
+  [super viewDidLoad];
+}
+
 - (void)_loadTracks {
   SCAccount *account = [SCSoundCloud account];
   if (!account) {
@@ -62,7 +66,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   WVTrackTableViewCell *cell = (WVTrackTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WVTrackTableViewCell class]) forIndexPath:indexPath];
-  [cell setTrack:self.tracks[indexPath.row]];
+
+  NSDictionary *track = self.tracks[indexPath.row];
+
+  [cell setTrack:track];
+
+//  dispatch_async(dispatch_queue_create("Image load queue", NULL), ^{
+//    NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:track[[WVTrack artworkURLKey]]]];
+//    if (imgData) {
+//      UIImage *image = [UIImage imageWithData:imgData];
+//      if (image) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//          WVTrackTableViewCell *updateCell = (WVTrackTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WVTrackTableViewCell class]) forIndexPath:indexPath];
+//          [updateCell setImage:image];
+//        });
+//      }
+//    }
+//  });
+
   return cell;
 }
 

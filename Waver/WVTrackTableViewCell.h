@@ -12,4 +12,6 @@
 
 - (void)setTrack:(NSDictionary *)track;
 
+- (void)setImage:(UIImage *)image;
+
 @end

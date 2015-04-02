@@ -16,6 +16,7 @@
 		5501E60C1ACDAA10001A1529 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5501E6051ACDAA10001A1529 /* Security.framework */; };
 		5501E6121ACDAE8C001A1529 /* WVTrackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5501E6111ACDAE8C001A1529 /* WVTrackListViewController.m */; };
 		551FC2ED1ACE21D300E2C6CB /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 551FC2EC1ACE21D300E2C6CB /* credentials.plist */; };
+		5539E7F51ACE051000BD63D9 /* WVImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5539E7F41ACE051000BD63D9 /* WVImageLoader.m */; };
 		556525591ACDBADA0045A3C3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 556525581ACDBADA0045A3C3 /* AVFoundation.framework */; };
 		556525611ACDBE740045A3C3 /* WVTrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525601ACDBE740045A3C3 /* WVTrackTableViewCell.m */; };
 		556525771ACDEE1D0045A3C3 /* WVTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525761ACDEE1D0045A3C3 /* WVTrack.m */; };
@@ -53,6 +54,8 @@
 		5501E6101ACDAE8C001A1529 /* WVTrackListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVTrackListViewController.h; sourceTree = "<group>"; };
 		5501E6111ACDAE8C001A1529 /* WVTrackListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVTrackListViewController.m; sourceTree = "<group>"; };
 		551FC2EC1ACE21D300E2C6CB /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		5539E7F31ACE051000BD63D9 /* WVImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVImageLoader.h; sourceTree = "<group>"; };
+		5539E7F41ACE051000BD63D9 /* WVImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVImageLoader.m; sourceTree = "<group>"; };
 		556525581ACDBADA0045A3C3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5565255F1ACDBE740045A3C3 /* WVTrackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVTrackTableViewCell.h; sourceTree = "<group>"; };
 		556525601ACDBE740045A3C3 /* WVTrackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVTrackTableViewCell.m; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 				55A72C6E1ACB1B7D0033C5FE /* Supporting Files */,
 				5565255F1ACDBE740045A3C3 /* WVTrackTableViewCell.h */,
 				556525601ACDBE740045A3C3 /* WVTrackTableViewCell.m */,
+				5539E7F31ACE051000BD63D9 /* WVImageLoader.h */,
+				5539E7F41ACE051000BD63D9 /* WVImageLoader.m */,
 			);
 			path = Waver;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5539E7F51ACE051000BD63D9 /* WVImageLoader.m in Sources */,
 				556525771ACDEE1D0045A3C3 /* WVTrack.m in Sources */,
 				55A72C771ACB1B7D0033C5FE /* WVLoginViewController.m in Sources */,
 				55A72C741ACB1B7D0033C5FE /* WVAppDelegate.m in Sources */,
