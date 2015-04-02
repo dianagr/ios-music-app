@@ -8,6 +8,7 @@
 
 #import "WVTrackTableViewCell.h"
 
+#import "WVTrack.h"
 @interface WVTrackTableViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -18,20 +19,19 @@
 @synthesize imageView=_imageView;
 
 - (void)setTrack:(NSDictionary *)track {
-  self.titleLabel.text = track[@"title"];
-  self.durationLabel.text = [[self class] _durationForMilliseconds:[track[@"duration"] floatValue]];
+  self.titleLabel.text = track[[WVTrack titleKey]];
+  self.durationLabel.text = [[self class] _durationForMilliseconds:[track[[WVTrack durationKey]] floatValue]];
 }
 
 + (NSString *)_durationForMilliseconds:(CGFloat)milliseconds {
   NSInteger seconds = milliseconds / 1000;
   NSInteger minutes = seconds / 60;
   NSInteger hours = minutes / 60;
+  
   if (hours > 0) {
-    return [NSString stringWithFormat:@"%d:%d:%d", hours, (minutes >= 0 ?: 0), (seconds >= 0 ?: 0)];
-  } else if (minutes > 0) {
-    return [NSString stringWithFormat:@"%d:%d", minutes, (seconds >= 0 ?: 0)];
+    return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes % 60, seconds % 60];
   }
-  return [NSString stringWithFormat:@"%d", (seconds >= 0 ?: 0)];
+  return [NSString stringWithFormat:@"%02d:%02d", minutes % 60, seconds % 60];
 }
 
 @end

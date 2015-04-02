@@ -8,6 +8,8 @@
 
 #import "WVTrackListViewController.h"
 #import "WVTrackTableViewCell.h"
+#import "WVTrack.h"
+
 #import <SCUI.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -66,7 +68,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   NSDictionary *track = self.tracks[indexPath.row];
-  NSString *streamURL = track[@"stream_url"];
+  NSString *streamURL = track[[WVTrack streamURLKey]];
   [self.audioPlayer stop];
   self.audioPlayer = nil;
   SCAccount *account = [SCSoundCloud account];
