@@ -7,7 +7,7 @@
 //
 
 #import "WVTrackListViewController.h"
-
+#import "WVTrackTableViewCell.h"
 #import <SCUI.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -59,9 +59,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"trackCell" forIndexPath:indexPath];
-  NSDictionary *track = self.tracks[indexPath.row];
-  cell.textLabel.text = track[@"title"];
+  WVTrackTableViewCell *cell = (WVTrackTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WVTrackTableViewCell class]) forIndexPath:indexPath];
+  [cell setTrack:self.tracks[indexPath.row]];
   return cell;
 }
 
