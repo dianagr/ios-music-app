@@ -9,20 +9,19 @@
 #import "WVLoginViewController.h"
 #import "WVTrackListViewController.h"
 
+#import <NXOAuth2Client/NXOAuth2.h>
 #import <SCUI.h>
 
 NSString *const kSegueIDLoggedIn = @"LoggedIn";
 
 @implementation WVLoginViewController
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  SCAccount *account = [SCSoundCloud account];
+  if (account) {
+    [self performSegueWithIdentifier:kSegueIDLoggedIn sender:self];
+  }
 }
 
 - (IBAction)didTapLoginButton:(UIButton *)sender {
