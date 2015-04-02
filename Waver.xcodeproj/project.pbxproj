@@ -20,6 +20,7 @@
 		556525611ACDBE740045A3C3 /* WVTrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525601ACDBE740045A3C3 /* WVTrackTableViewCell.m */; };
 		556525771ACDEE1D0045A3C3 /* WVTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525761ACDEE1D0045A3C3 /* WVTrack.m */; };
 		556525781ACDEE1D0045A3C3 /* WVTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525761ACDEE1D0045A3C3 /* WVTrack.m */; };
+		5565257E1ACDEEA60045A3C3 /* WVTrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525601ACDBE740045A3C3 /* WVTrackTableViewCell.m */; };
 		55A72C711ACB1B7D0033C5FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A72C701ACB1B7D0033C5FE /* main.m */; };
 		55A72C741ACB1B7D0033C5FE /* WVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A72C731ACB1B7D0033C5FE /* WVAppDelegate.m */; };
 		55A72C771ACB1B7D0033C5FE /* WVLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A72C761ACB1B7D0033C5FE /* WVLoginViewController.m */; };
@@ -27,6 +28,7 @@
 		55A72C7C1ACB1B7D0033C5FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A72C7B1ACB1B7D0033C5FE /* Images.xcassets */; };
 		55A72C7F1ACB1B7D0033C5FE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A72C7D1ACB1B7D0033C5FE /* LaunchScreen.xib */; };
 		6F0C95DC6524012E9E8CF55F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC66D493A4640C4E5C65AD3 /* libPods.a */; };
+		55A72C8B1ACB1B7D0033C5FE /* WVTrackCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A72C8A1ACB1B7D0033C5FE /* WVTrackCellTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,7 @@
 		55A72C891ACB1B7D0033C5FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC66D493A4640C4E5C65AD3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21DAA15C2E02D3FFFE5268E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		55A72C8A1ACB1B7D0033C5FE /* WVTrackCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WVTrackCellTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,7 @@
 		55A72C871ACB1B7D0033C5FE /* WaverTests */ = {
 			isa = PBXGroup;
 			children = (
+				55A72C8A1ACB1B7D0033C5FE /* WVTrackCellTests.m */,
 				55A72C881ACB1B7D0033C5FE /* Supporting Files */,
 			);
 			path = WaverTests;
@@ -341,7 +345,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				556525781ACDEE1D0045A3C3 /* WVTrack.m in Sources */,
-				55A72C8B1ACB1B7D0033C5FE /* WaverTests.m in Sources */,
+				55A72C8B1ACB1B7D0033C5FE /* WVTrackCellTests.m in Sources */,
+				5565257E1ACDEEA60045A3C3 /* WVTrackTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
