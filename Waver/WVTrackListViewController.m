@@ -13,6 +13,7 @@
 
 @interface WVTrackListViewController () <AVAudioPlayerDelegate>
 @property (copy, nonatomic) NSArray *tracks;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @end
 
 @implementation WVTrackListViewController
@@ -62,6 +63,23 @@
   NSDictionary *track = self.tracks[indexPath.row];
   cell.textLabel.text = track[@"title"];
   return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSDictionary *track = self.tracks[indexPath.row];
+  NSString *streamURL = track[@"stream_url"];
+  [self.audioPlayer stop];
+  self.audioPlayer = nil;
+  SCAccount *account = [SCSoundCloud account];
+  [SCRequest performMethod:SCRequestMethodGET onResource:[NSURL URLWithString:streamURL] usingParameters:nil withAccount:account sendingProgressHandler:nil responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error) {
+    NSError *playerError;
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithData:responseData error:&playerError];
+    if (playerError) {
+      NSLog(@"Player error: %@", playerError.localizedDescription);
+    }
+    [self.audioPlayer prepareToPlay];
+    [self.audioPlayer play];
+  }];
 }
 
 @end
