@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WVTrackListViewController : UITableViewController
+@interface WVTrackListViewController : UIViewController
 
 @end

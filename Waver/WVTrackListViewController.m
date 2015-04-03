@@ -13,7 +13,8 @@
 #import <SCUI.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface WVTrackListViewController () <AVAudioPlayerDelegate>
+@interface WVTrackListViewController () <AVAudioPlayerDelegate, UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (copy, nonatomic) NSArray *tracks;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @property (strong, nonatomic) NSTimer *progressUpdateTimer;
@@ -30,6 +31,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  self.edgesForExtendedLayout = UIRectEdgeNone;
   [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryRecord error:nil];
   [[AVAudioSession sharedInstance] overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
 }
