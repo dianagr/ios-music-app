@@ -67,11 +67,11 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDk-JM-sxM">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                             <subviews>
-                                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zCd-P5-mpZ">
+                                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zCd-P5-mpZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="70" id="Fge-KF-IGl"/>
-                                                        <constraint firstAttribute="width" constant="108" id="ziw-ii-jTJ"/>
+                                                        <constraint firstAttribute="width" constant="70" id="ziw-ii-jTJ"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -108,23 +108,23 @@
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ThM-OG-0Oq">
                                                     <rect key="frame" x="0.0" y="-2" width="150" height="2"/>
                                                 </progressView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARb-bP-Gbc">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARb-bP-Gbc">
                                                     <rect key="frame" x="148" y="8" width="366" height="54"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstItem="ThM-OG-0Oq" firstAttribute="leading" secondItem="ARb-bP-Gbc" secondAttribute="leading" id="0EF-AL-GYB"/>
                                                 <constraint firstItem="ARb-bP-Gbc" firstAttribute="top" secondItem="UDk-JM-sxM" secondAttribute="top" constant="8" id="2Nm-9a-MGI"/>
+                                                <constraint firstItem="Y5n-sa-DLz" firstAttribute="top" secondItem="UDk-JM-sxM" secondAttribute="top" id="3h0-ea-x2l"/>
                                                 <constraint firstItem="ThM-OG-0Oq" firstAttribute="top" secondItem="ARb-bP-Gbc" secondAttribute="bottom" constant="8" id="Khb-Wd-FVx"/>
-                                                <constraint firstItem="Y5n-sa-DLz" firstAttribute="top" secondItem="UDk-JM-sxM" secondAttribute="top" constant="8" id="LhS-Bu-S9V"/>
+                                                <constraint firstItem="ThM-OG-0Oq" firstAttribute="trailing" secondItem="ARb-bP-Gbc" secondAttribute="trailing" id="NxM-6x-yfo"/>
+                                                <constraint firstAttribute="bottom" secondItem="Y5n-sa-DLz" secondAttribute="bottom" id="SDR-KM-6jB"/>
                                                 <constraint firstAttribute="trailing" secondItem="Y5n-sa-DLz" secondAttribute="trailing" constant="8" id="WCS-ed-uEj"/>
                                                 <constraint firstItem="zCd-P5-mpZ" firstAttribute="leadingMargin" secondItem="UDk-JM-sxM" secondAttribute="leadingMargin" id="aB2-cU-1WD"/>
-                                                <constraint firstItem="ThM-OG-0Oq" firstAttribute="leading" secondItem="UDk-JM-sxM" secondAttribute="leading" constant="116" id="aJ8-0g-ca5"/>
-                                                <constraint firstAttribute="bottom" secondItem="Y5n-sa-DLz" secondAttribute="bottom" constant="8" id="bXC-xH-Ugh"/>
-                                                <constraint firstAttribute="trailing" secondItem="ThM-OG-0Oq" secondAttribute="trailing" constant="86" id="bhB-e2-j0d"/>
                                                 <constraint firstAttribute="bottom" secondItem="ThM-OG-0Oq" secondAttribute="bottom" constant="8" id="dRp-y4-btD"/>
                                                 <constraint firstItem="Y5n-sa-DLz" firstAttribute="leading" secondItem="ARb-bP-Gbc" secondAttribute="trailing" constant="8" id="eCY-Ia-HHQ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zCd-P5-mpZ" secondAttribute="bottomMargin" id="ldY-0i-2wJ"/>
@@ -142,13 +142,13 @@
                                                     <exclude reference="ldY-0i-2wJ"/>
                                                     <exclude reference="2Nm-9a-MGI"/>
                                                     <exclude reference="sMr-5c-U10"/>
+                                                    <exclude reference="0EF-AL-GYB"/>
                                                     <exclude reference="Khb-Wd-FVx"/>
-                                                    <exclude reference="aJ8-0g-ca5"/>
-                                                    <exclude reference="bhB-e2-j0d"/>
+                                                    <exclude reference="NxM-6x-yfo"/>
                                                     <exclude reference="dRp-y4-btD"/>
-                                                    <exclude reference="LhS-Bu-S9V"/>
+                                                    <exclude reference="3h0-ea-x2l"/>
+                                                    <exclude reference="SDR-KM-6jB"/>
                                                     <exclude reference="WCS-ed-uEj"/>
-                                                    <exclude reference="bXC-xH-Ugh"/>
                                                     <exclude reference="eCY-Ia-HHQ"/>
                                                 </mask>
                                             </variation>
@@ -164,13 +164,13 @@
                                                     <include reference="ldY-0i-2wJ"/>
                                                     <include reference="2Nm-9a-MGI"/>
                                                     <include reference="sMr-5c-U10"/>
+                                                    <include reference="0EF-AL-GYB"/>
                                                     <include reference="Khb-Wd-FVx"/>
-                                                    <include reference="aJ8-0g-ca5"/>
-                                                    <include reference="bhB-e2-j0d"/>
+                                                    <include reference="NxM-6x-yfo"/>
                                                     <include reference="dRp-y4-btD"/>
-                                                    <include reference="LhS-Bu-S9V"/>
+                                                    <include reference="3h0-ea-x2l"/>
+                                                    <include reference="SDR-KM-6jB"/>
                                                     <include reference="WCS-ed-uEj"/>
-                                                    <include reference="bXC-xH-Ugh"/>
                                                     <include reference="eCY-Ia-HHQ"/>
                                                 </mask>
                                             </variation>
@@ -223,7 +223,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29Y-55-3jm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1887" y="420"/>
+            <point key="canvasLocation" x="1887" y="419.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rdt-ro-wT2">

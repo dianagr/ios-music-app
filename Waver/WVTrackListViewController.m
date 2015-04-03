@@ -30,6 +30,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryRecord error:nil];
+  [[AVAudioSession sharedInstance] overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
 }
 
 - (void)_loadTracks {
