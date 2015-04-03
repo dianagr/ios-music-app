@@ -62,7 +62,7 @@
     return;
   }
 
-  NSURL *resourceURL = [NSURL URLWithString:@"https://api.soundcloud.com/users/kygo/tracks"];
+  NSURL *resourceURL = [NSURL URLWithString:@"https://api.soundcloud.com/users/fuckmylife/tracks"];
   [SCRequest performMethod:SCRequestMethodGET onResource:resourceURL usingParameters:nil withAccount:account sendingProgressHandler:nil responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error) {
     NSError *jsonError = nil;
     if (error) {
@@ -129,7 +129,7 @@
     }
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
-    self.progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(_updateProgress:) userInfo:nil repeats:YES];
+    self.progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(_updateProgress:) userInfo:nil repeats:YES];
   }];
   [self.progressOverlayView setPlaying:YES];
   [self.progressOverlayView setTrack:track];

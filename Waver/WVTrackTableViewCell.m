@@ -37,8 +37,10 @@
 - (void)setTrack:(NSDictionary *)track {
   self.titleLabel.text = track[[WVTrack titleKey]];
   self.durationLabel.text = [[self class] _durationForMilliseconds:[track[[WVTrack durationKey]] floatValue]];
-  NSURL *imageURL = [NSURL URLWithString:track[[WVTrack artworkURLKey]]];
-  [self.imageLoader loadImageWithURL:imageURL];
+  if (![track[[WVTrack artworkURLKey]] isKindOfClass:[NSNull class]]) {
+    NSURL *imageURL = [NSURL URLWithString:track[[WVTrack artworkURLKey]]];
+    [self.imageLoader loadImageWithURL:imageURL];
+  }
 }
 
 - (void)setImage:(UIImage *)image {
