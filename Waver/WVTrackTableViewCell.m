@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *durationLabel;
-@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 @property (strong, nonatomic) WVImageLoader *imageLoader;
 @end
@@ -32,7 +31,6 @@
 }
 
 - (void)prepareForReuse {
-  self.progressView.progress = 0;
   self.imageView.image = nil;
 }
 
@@ -52,14 +50,7 @@
                   } completion:NULL];
 }
 
-- (void)setProgress:(CGFloat)progress {
-  [self.progressView setProgress:progress animated:NO];
-}
-
 #pragma mark Private
-
-- (void)_updateProgress:(NSTimer *)timer {
-}
 
 + (NSString *)_durationForMilliseconds:(CGFloat)milliseconds {
   NSInteger seconds = milliseconds / 1000;

@@ -14,6 +14,4 @@
 
 - (void)setImage:(UIImage *)image;
 
-- (void)setProgress:(CGFloat)progress;
-
 @end

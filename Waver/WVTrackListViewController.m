@@ -22,7 +22,6 @@
 @property (copy, nonatomic) NSArray *tracks;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @property (strong, nonatomic) NSTimer *progressUpdateTimer;
-@property (strong, nonatomic) NSDictionary *currentTrack;
 @end
 
 @implementation WVTrackListViewController
@@ -31,6 +30,12 @@
   if (!self.tracks.lastObject) {
     [self _loadTracks];
   }
+}
+
+- (void)loadView {
+  self.tableView.rowHeight = UITableViewAutomaticDimension;
+  self.tableView.estimatedRowHeight = 70;
+  [super loadView];
 }
 
 - (void)viewDidLoad {
@@ -60,19 +65,13 @@
       return;
     } else if ([jsonResponse isKindOfClass:[NSArray class]]) {
       self.tracks = (NSArray *)jsonResponse;
-      [self.tableView reloadData];
+      [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
   }];
 }
 
 - (void)_updateProgress:(NSTimer *)timer {
-  dispatch_async(dispatch_get_main_queue(), ^{
-    NSInteger index = [self.tracks indexOfObject:self.currentTrack];
-    if (index != NSNotFound) {
-      NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-      [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    }
-  });
+  
 }
 
 #pragma mark WVProgressOverlayViewDelegate
@@ -100,22 +99,17 @@
   WVTrackTableViewCell *cell = (WVTrackTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WVTrackTableViewCell class]) forIndexPath:indexPath];
   NSDictionary *track = self.tracks[indexPath.row];
   [cell setTrack: track];
-  if ([self.currentTrack isEqualToDictionary:track]) {
-    [cell setProgress:(self.audioPlayer.currentTime / self.audioPlayer.duration)];
-  } else {
-    [cell setProgress:0];
-  }
   return cell;
 }
 
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  self.currentTrack = self.tracks[indexPath.row];
-  NSString *streamURL = self.currentTrack[[WVTrack streamURLKey]];
+  NSDictionary *track = self.tracks[indexPath.row];
+  NSString *streamURL = track[[WVTrack streamURLKey]];
   [self.audioPlayer stop];
   self.audioPlayer = nil;
-  [self.progressUpdateTimer invalidate];
+//  [self.progressUpdateTimer invalidate];
   SCAccount *account = [SCSoundCloud account];
   [SCRequest performMethod:SCRequestMethodGET onResource:[NSURL URLWithString:streamURL] usingParameters:nil withAccount:account sendingProgressHandler:nil responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error) {
     NSError *playerError;
@@ -125,7 +119,7 @@
     }
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
-    self.progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(_updateProgress:) userInfo:nil repeats:YES];
+//    self.progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(_updateProgress:) userInfo:nil repeats:YES];
     [self.progressOverlayView setPlaying:YES];
   }];
 }
