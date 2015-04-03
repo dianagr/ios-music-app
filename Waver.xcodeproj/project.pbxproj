@@ -15,21 +15,21 @@
 		5501E60B1ACDAA10001A1529 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5501E6041ACDAA10001A1529 /* QuartzCore.framework */; };
 		5501E60C1ACDAA10001A1529 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5501E6051ACDAA10001A1529 /* Security.framework */; };
 		5501E6121ACDAE8C001A1529 /* WVTrackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5501E6111ACDAE8C001A1529 /* WVTrackListViewController.m */; };
-		551FC2ED1ACE21D300E2C6CB /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 551FC2EC1ACE21D300E2C6CB /* credentials.plist */; };
 		5539E7F51ACE051000BD63D9 /* WVImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5539E7F41ACE051000BD63D9 /* WVImageLoader.m */; };
 		556525591ACDBADA0045A3C3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 556525581ACDBADA0045A3C3 /* AVFoundation.framework */; };
 		556525611ACDBE740045A3C3 /* WVTrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525601ACDBE740045A3C3 /* WVTrackTableViewCell.m */; };
 		556525771ACDEE1D0045A3C3 /* WVTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525761ACDEE1D0045A3C3 /* WVTrack.m */; };
 		556525781ACDEE1D0045A3C3 /* WVTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525761ACDEE1D0045A3C3 /* WVTrack.m */; };
 		5565257E1ACDEEA60045A3C3 /* WVTrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525601ACDBE740045A3C3 /* WVTrackTableViewCell.m */; };
+		5585D7BE1ACE26CF001C6208 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5585D7BD1ACE26CF001C6208 /* credentials.plist */; };
 		55A72C711ACB1B7D0033C5FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A72C701ACB1B7D0033C5FE /* main.m */; };
 		55A72C741ACB1B7D0033C5FE /* WVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A72C731ACB1B7D0033C5FE /* WVAppDelegate.m */; };
 		55A72C771ACB1B7D0033C5FE /* WVLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A72C761ACB1B7D0033C5FE /* WVLoginViewController.m */; };
 		55A72C7A1ACB1B7D0033C5FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A72C781ACB1B7D0033C5FE /* Main.storyboard */; };
 		55A72C7C1ACB1B7D0033C5FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A72C7B1ACB1B7D0033C5FE /* Images.xcassets */; };
 		55A72C7F1ACB1B7D0033C5FE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55A72C7D1ACB1B7D0033C5FE /* LaunchScreen.xib */; };
-		6F0C95DC6524012E9E8CF55F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC66D493A4640C4E5C65AD3 /* libPods.a */; };
 		55A72C8B1ACB1B7D0033C5FE /* WVTrackCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A72C8A1ACB1B7D0033C5FE /* WVTrackCellTests.m */; };
+		6F0C95DC6524012E9E8CF55F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC66D493A4640C4E5C65AD3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 		5501E6051ACDAA10001A1529 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5501E6101ACDAE8C001A1529 /* WVTrackListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVTrackListViewController.h; sourceTree = "<group>"; };
 		5501E6111ACDAE8C001A1529 /* WVTrackListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVTrackListViewController.m; sourceTree = "<group>"; };
-		551FC2EC1ACE21D300E2C6CB /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		5539E7F31ACE051000BD63D9 /* WVImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVImageLoader.h; sourceTree = "<group>"; };
 		5539E7F41ACE051000BD63D9 /* WVImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVImageLoader.m; sourceTree = "<group>"; };
 		556525581ACDBADA0045A3C3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -61,6 +60,7 @@
 		556525601ACDBE740045A3C3 /* WVTrackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVTrackTableViewCell.m; sourceTree = "<group>"; };
 		556525751ACDEE1D0045A3C3 /* WVTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVTrack.h; sourceTree = "<group>"; };
 		556525761ACDEE1D0045A3C3 /* WVTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVTrack.m; sourceTree = "<group>"; };
+		5585D7BD1ACE26CF001C6208 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		55A72C6B1ACB1B7D0033C5FE /* Waver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A72C6F1ACB1B7D0033C5FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A72C701ACB1B7D0033C5FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,9 +73,9 @@
 		55A72C7E1ACB1B7D0033C5FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		55A72C841ACB1B7D0033C5FE /* WaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A72C891ACB1B7D0033C5FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55A72C8A1ACB1B7D0033C5FE /* WVTrackCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WVTrackCellTests.m; sourceTree = "<group>"; };
 		7DC66D493A4640C4E5C65AD3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21DAA15C2E02D3FFFE5268E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		55A72C8A1ACB1B7D0033C5FE /* WVTrackCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WVTrackCellTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +169,7 @@
 			children = (
 				55A72C6F1ACB1B7D0033C5FE /* Info.plist */,
 				55A72C701ACB1B7D0033C5FE /* main.m */,
-				551FC2EC1ACE21D300E2C6CB /* credentials.plist */,
+				5585D7BD1ACE26CF001C6208 /* credentials.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -283,7 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A72C7A1ACB1B7D0033C5FE /* Main.storyboard in Resources */,
-				551FC2ED1ACE21D300E2C6CB /* credentials.plist in Resources */,
+				5585D7BE1ACE26CF001C6208 /* credentials.plist in Resources */,
 				55A72C7F1ACB1B7D0033C5FE /* LaunchScreen.xib in Resources */,
 				55A72C7C1ACB1B7D0033C5FE /* Images.xcassets in Resources */,
 			);

@@ -16,6 +16,8 @@
 @interface WVTrackListViewController () <AVAudioPlayerDelegate>
 @property (copy, nonatomic) NSArray *tracks;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic) NSTimer *progressUpdateTimer;
+@property (strong, nonatomic) NSDictionary *currentTrack;
 @end
 
 @implementation WVTrackListViewController
@@ -54,6 +56,16 @@
   }];
 }
 
+- (void)_updateProgress:(NSTimer *)timer {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    NSInteger index = [self.tracks indexOfObject:self.currentTrack];
+    if (index != NSNotFound) {
+      NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+      [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+  });
+}
+
 # pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -66,32 +78,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   WVTrackTableViewCell *cell = (WVTrackTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WVTrackTableViewCell class]) forIndexPath:indexPath];
-
   NSDictionary *track = self.tracks[indexPath.row];
-
-  [cell setTrack:track];
-
-//  dispatch_async(dispatch_queue_create("Image load queue", NULL), ^{
-//    NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:track[[WVTrack artworkURLKey]]]];
-//    if (imgData) {
-//      UIImage *image = [UIImage imageWithData:imgData];
-//      if (image) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//          WVTrackTableViewCell *updateCell = (WVTrackTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WVTrackTableViewCell class]) forIndexPath:indexPath];
-//          [updateCell setImage:image];
-//        });
-//      }
-//    }
-//  });
-
+  [cell setTrack: track];
+  if ([self.currentTrack isEqualToDictionary:track]) {
+    [cell setProgress:(self.audioPlayer.currentTime / self.audioPlayer.duration)];
+  } else {
+    [cell setProgress:0];
+  }
   return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  NSDictionary *track = self.tracks[indexPath.row];
-  NSString *streamURL = track[[WVTrack streamURLKey]];
+  self.currentTrack = self.tracks[indexPath.row];
+  NSString *streamURL = self.currentTrack[[WVTrack streamURLKey]];
   [self.audioPlayer stop];
   self.audioPlayer = nil;
+  [self.progressUpdateTimer invalidate];
   SCAccount *account = [SCSoundCloud account];
   [SCRequest performMethod:SCRequestMethodGET onResource:[NSURL URLWithString:streamURL] usingParameters:nil withAccount:account sendingProgressHandler:nil responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error) {
     NSError *playerError;
@@ -101,6 +103,7 @@
     }
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
+    self.progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(_updateProgress:) userInfo:nil repeats:YES];
   }];
 }
 

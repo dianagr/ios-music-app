@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 @property (strong, nonatomic) WVImageLoader *imageLoader;
 @end
@@ -30,12 +31,16 @@
   return _imageLoader;
 }
 
+- (void)prepareForReuse {
+  self.progressView.progress = 0;
+  self.imageView.image = nil;
+}
+
 - (void)setTrack:(NSDictionary *)track {
   self.titleLabel.text = track[[WVTrack titleKey]];
   self.durationLabel.text = [[self class] _durationForMilliseconds:[track[[WVTrack durationKey]] floatValue]];
   NSURL *imageURL = [NSURL URLWithString:track[[WVTrack artworkURLKey]]];
   [self.imageLoader loadImageWithURL:imageURL];
-//  [self.imageView setImageWithURL:imageURL];
 }
 
 - (void)setImage:(UIImage *)image {
@@ -45,6 +50,15 @@
                   animations:^{
                     self.imageView.image = image;
                   } completion:NULL];
+}
+
+- (void)setProgress:(CGFloat)progress {
+  [self.progressView setProgress:progress animated:NO];
+}
+
+#pragma mark Private
+
+- (void)_updateProgress:(NSTimer *)timer {
 }
 
 + (NSString *)_durationForMilliseconds:(CGFloat)milliseconds {
