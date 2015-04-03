@@ -9,12 +9,16 @@
 #import "WVTrackListViewController.h"
 #import "WVTrackTableViewCell.h"
 #import "WVTrack.h"
+#import "WVProgressOverlayView.h"
 
 #import <SCUI.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface WVTrackListViewController () <AVAudioPlayerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface WVTrackListViewController () <AVAudioPlayerDelegate, UITableViewDelegate, UITableViewDataSource, WVProgressOverlayViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet WVProgressOverlayView *progressOverlayView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *progressOverlayViewBottomConstraint;
+
 @property (copy, nonatomic) NSArray *tracks;
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @property (strong, nonatomic) NSTimer *progressUpdateTimer;
@@ -32,6 +36,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.edgesForExtendedLayout = UIRectEdgeNone;
+  self.progressOverlayView.delegate = self;
   [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryRecord error:nil];
   [[AVAudioSession sharedInstance] overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
 }
@@ -70,6 +75,17 @@
   });
 }
 
+#pragma mark WVProgressOverlayViewDelegate
+
+- (void)progressOverlayViewDidTogglePlay:(WVProgressOverlayView *)overlayView {
+  if ([self.audioPlayer isPlaying]) {
+    [self.audioPlayer pause];
+  } else {
+    [self.audioPlayer play];
+  }
+  [self.progressOverlayView setPlaying:[self.audioPlayer isPlaying]];
+}
+
 # pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -92,6 +108,8 @@
   return cell;
 }
 
+#pragma mark UITableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   self.currentTrack = self.tracks[indexPath.row];
   NSString *streamURL = self.currentTrack[[WVTrack streamURLKey]];
@@ -108,6 +126,7 @@
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
     self.progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(_updateProgress:) userInfo:nil repeats:YES];
+    [self.progressOverlayView setPlaying:YES];
   }];
 }
 

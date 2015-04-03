@@ -22,6 +22,7 @@
 		556525781ACDEE1D0045A3C3 /* WVTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525761ACDEE1D0045A3C3 /* WVTrack.m */; };
 		5565257E1ACDEEA60045A3C3 /* WVTrackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 556525601ACDBE740045A3C3 /* WVTrackTableViewCell.m */; };
 		5585D7BE1ACE26CF001C6208 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5585D7BD1ACE26CF001C6208 /* credentials.plist */; };
+		5585D7C31ACF167A001C6208 /* WVProgressOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5585D7C21ACF167A001C6208 /* WVProgressOverlayView.m */; };
 		55A72C711ACB1B7D0033C5FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A72C701ACB1B7D0033C5FE /* main.m */; };
 		55A72C741ACB1B7D0033C5FE /* WVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A72C731ACB1B7D0033C5FE /* WVAppDelegate.m */; };
 		55A72C771ACB1B7D0033C5FE /* WVLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A72C761ACB1B7D0033C5FE /* WVLoginViewController.m */; };
@@ -61,6 +62,8 @@
 		556525751ACDEE1D0045A3C3 /* WVTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVTrack.h; sourceTree = "<group>"; };
 		556525761ACDEE1D0045A3C3 /* WVTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVTrack.m; sourceTree = "<group>"; };
 		5585D7BD1ACE26CF001C6208 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		5585D7C11ACF167A001C6208 /* WVProgressOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WVProgressOverlayView.h; sourceTree = "<group>"; };
+		5585D7C21ACF167A001C6208 /* WVProgressOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WVProgressOverlayView.m; sourceTree = "<group>"; };
 		55A72C6B1ACB1B7D0033C5FE /* Waver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Waver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A72C6F1ACB1B7D0033C5FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A72C701ACB1B7D0033C5FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -152,14 +155,16 @@
 				55A72C761ACB1B7D0033C5FE /* WVLoginViewController.m */,
 				5501E6101ACDAE8C001A1529 /* WVTrackListViewController.h */,
 				5501E6111ACDAE8C001A1529 /* WVTrackListViewController.m */,
-				55A72C781ACB1B7D0033C5FE /* Main.storyboard */,
-				55A72C7B1ACB1B7D0033C5FE /* Images.xcassets */,
-				55A72C7D1ACB1B7D0033C5FE /* LaunchScreen.xib */,
-				55A72C6E1ACB1B7D0033C5FE /* Supporting Files */,
 				5565255F1ACDBE740045A3C3 /* WVTrackTableViewCell.h */,
 				556525601ACDBE740045A3C3 /* WVTrackTableViewCell.m */,
 				5539E7F31ACE051000BD63D9 /* WVImageLoader.h */,
 				5539E7F41ACE051000BD63D9 /* WVImageLoader.m */,
+				5585D7C11ACF167A001C6208 /* WVProgressOverlayView.h */,
+				5585D7C21ACF167A001C6208 /* WVProgressOverlayView.m */,
+				55A72C781ACB1B7D0033C5FE /* Main.storyboard */,
+				55A72C7B1ACB1B7D0033C5FE /* Images.xcassets */,
+				55A72C7D1ACB1B7D0033C5FE /* LaunchScreen.xib */,
+				55A72C6E1ACB1B7D0033C5FE /* Supporting Files */,
 			);
 			path = Waver;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5539E7F51ACE051000BD63D9 /* WVImageLoader.m in Sources */,
+				5585D7C31ACF167A001C6208 /* WVProgressOverlayView.m in Sources */,
 				556525771ACDEE1D0045A3C3 /* WVTrack.m in Sources */,
 				55A72C771ACB1B7D0033C5FE /* WVLoginViewController.m in Sources */,
 				55A72C741ACB1B7D0033C5FE /* WVAppDelegate.m in Sources */,

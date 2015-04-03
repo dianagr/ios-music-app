@@ -57,7 +57,7 @@
                         <viewControllerLayoutGuide type="top" id="a1M-jo-b6G"/>
                         <viewControllerLayoutGuide type="bottom" id="hgA-Sp-yvY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5PD-iI-gsy">
+                    <view key="view" contentMode="scaleToFill" id="5PD-iI-gsy" userLabel="Container View">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eIY-LQ-Xf1">
@@ -222,38 +222,94 @@
                                     <outlet property="delegate" destination="WGL-3u-sqs" id="u4P-U9-xg9"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gld-vG-olg" userLabel="Overlay View" customClass="WVProgressOverlayView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPy-hB-crX">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapTogglePlayButton:" destination="gld-vG-olg" eventType="touchUpInside" id="RXx-K5-dSQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="XPy-hB-crX" secondAttribute="centerX" id="8MH-ZE-vyR"/>
+                                    <constraint firstAttribute="centerY" secondItem="XPy-hB-crX" secondAttribute="centerY" id="I5K-Pb-sSI"/>
+                                    <constraint firstAttribute="height" constant="92" id="Zm8-QW-DV1"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="XPy-hB-crX"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="Zm8-QW-DV1"/>
+                                        <exclude reference="8MH-ZE-vyR"/>
+                                        <exclude reference="I5K-Pb-sSI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="XPy-hB-crX"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="Zm8-QW-DV1"/>
+                                        <include reference="8MH-ZE-vyR"/>
+                                        <include reference="I5K-Pb-sSI"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="togglePlayButton" destination="XPy-hB-crX" id="g2u-lZ-Dpw"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hgA-Sp-yvY" firstAttribute="top" secondItem="gld-vG-olg" secondAttribute="bottom" id="GzC-oO-ClF"/>
                             <constraint firstItem="eIY-LQ-Xf1" firstAttribute="height" secondItem="5PD-iI-gsy" secondAttribute="height" id="KJX-S8-bVC"/>
                             <constraint firstAttribute="centerX" secondItem="eIY-LQ-Xf1" secondAttribute="centerX" id="M8m-ja-3Ss"/>
                             <constraint firstItem="eIY-LQ-Xf1" firstAttribute="width" secondItem="5PD-iI-gsy" secondAttribute="width" id="TsY-6i-8yD"/>
+                            <constraint firstItem="gld-vG-olg" firstAttribute="leading" secondItem="5PD-iI-gsy" secondAttribute="leadingMargin" constant="-16" id="q6l-88-stj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gld-vG-olg" secondAttribute="trailing" constant="-16" id="yVE-ut-vPx"/>
                             <constraint firstAttribute="centerY" secondItem="eIY-LQ-Xf1" secondAttribute="centerY" id="yfi-fr-1JO"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="eIY-LQ-Xf1"/>
+                                <exclude reference="gld-vG-olg"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KJX-S8-bVC"/>
                                 <exclude reference="M8m-ja-3Ss"/>
                                 <exclude reference="TsY-6i-8yD"/>
                                 <exclude reference="yfi-fr-1JO"/>
+                                <exclude reference="q6l-88-stj"/>
+                                <exclude reference="yVE-ut-vPx"/>
+                                <exclude reference="GzC-oO-ClF"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="eIY-LQ-Xf1"/>
+                                <include reference="gld-vG-olg"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="KJX-S8-bVC"/>
                                 <include reference="M8m-ja-3Ss"/>
                                 <include reference="TsY-6i-8yD"/>
                                 <include reference="yfi-fr-1JO"/>
+                                <include reference="q6l-88-stj"/>
+                                <include reference="yVE-ut-vPx"/>
+                                <include reference="GzC-oO-ClF"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="progressOverlayView" destination="gld-vG-olg" id="Uwm-FD-tcz"/>
+                        <outlet property="progressOverlayViewBottomConstraint" destination="GzC-oO-ClF" id="ayI-0d-m42"/>
                         <outlet property="tableView" destination="eIY-LQ-Xf1" id="9TN-rq-vco"/>
                     </connections>
                 </viewController>
