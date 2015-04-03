@@ -21,4 +21,6 @@
 
 - (void)setProgress:(CGFloat)progress;
 
+- (void)setTrack:(NSDictionary *)track;
+
 @end

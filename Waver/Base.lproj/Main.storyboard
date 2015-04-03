@@ -216,15 +216,24 @@
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Wz-va-wt7">
                                         <rect key="frame" x="0.0" y="-2" width="150" height="2"/>
                                     </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyd-b3-8ak">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.38097274853424035" green="0.37461220047006005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Eyd-b3-8ak" secondAttribute="trailing" constant="8" id="Rod-0S-P5I"/>
+                                    <constraint firstItem="Eyd-b3-8ak" firstAttribute="leading" secondItem="gld-vG-olg" secondAttribute="leading" constant="8" id="Rxe-XV-mpE"/>
                                     <constraint firstAttribute="bottom" secondItem="0Wz-va-wt7" secondAttribute="bottom" constant="15" id="TEb-Vc-gks"/>
                                     <constraint firstAttribute="height" constant="80" id="VDk-vQ-6NT"/>
+                                    <constraint firstItem="XPy-hB-crX" firstAttribute="top" secondItem="Eyd-b3-8ak" secondAttribute="bottom" id="VOp-gM-rps"/>
                                     <constraint firstItem="0Wz-va-wt7" firstAttribute="top" secondItem="XPy-hB-crX" secondAttribute="bottom" constant="11" id="cP9-yd-F2J"/>
                                     <constraint firstAttribute="centerX" secondItem="XPy-hB-crX" secondAttribute="centerX" id="dWg-Gd-lLp"/>
-                                    <constraint firstItem="XPy-hB-crX" firstAttribute="top" secondItem="gld-vG-olg" secondAttribute="top" constant="22" id="j6R-5Y-xwa"/>
+                                    <constraint firstItem="Eyd-b3-8ak" firstAttribute="top" secondItem="gld-vG-olg" secondAttribute="top" constant="5" id="lOI-4h-5sU"/>
                                     <constraint firstItem="0Wz-va-wt7" firstAttribute="leading" secondItem="gld-vG-olg" secondAttribute="leading" constant="58" id="pyT-4e-zfn"/>
                                     <constraint firstAttribute="trailing" secondItem="0Wz-va-wt7" secondAttribute="trailing" constant="58" id="qbr-xn-eEu"/>
                                 </constraints>
@@ -232,34 +241,43 @@
                                     <mask key="subviews">
                                         <exclude reference="XPy-hB-crX"/>
                                         <exclude reference="0Wz-va-wt7"/>
+                                        <exclude reference="Eyd-b3-8ak"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="VDk-vQ-6NT"/>
+                                        <exclude reference="Rod-0S-P5I"/>
+                                        <exclude reference="Rxe-XV-mpE"/>
+                                        <exclude reference="lOI-4h-5sU"/>
                                         <exclude reference="TEb-Vc-gks"/>
                                         <exclude reference="cP9-yd-F2J"/>
                                         <exclude reference="pyT-4e-zfn"/>
                                         <exclude reference="qbr-xn-eEu"/>
+                                        <exclude reference="VOp-gM-rps"/>
                                         <exclude reference="dWg-Gd-lLp"/>
-                                        <exclude reference="j6R-5Y-xwa"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="XPy-hB-crX"/>
                                         <include reference="0Wz-va-wt7"/>
+                                        <include reference="Eyd-b3-8ak"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="VDk-vQ-6NT"/>
+                                        <include reference="Rod-0S-P5I"/>
+                                        <include reference="Rxe-XV-mpE"/>
+                                        <include reference="lOI-4h-5sU"/>
                                         <include reference="TEb-Vc-gks"/>
                                         <include reference="cP9-yd-F2J"/>
                                         <include reference="pyT-4e-zfn"/>
                                         <include reference="qbr-xn-eEu"/>
+                                        <include reference="VOp-gM-rps"/>
                                         <include reference="dWg-Gd-lLp"/>
-                                        <include reference="j6R-5Y-xwa"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <outlet property="progressView" destination="0Wz-va-wt7" id="274-xI-OzV"/>
+                                    <outlet property="titleLabel" destination="Eyd-b3-8ak" id="hto-od-MCN"/>
                                     <outlet property="togglePlayButton" destination="XPy-hB-crX" id="g2u-lZ-Dpw"/>
                                 </connections>
                             </view>

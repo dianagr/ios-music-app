@@ -36,6 +36,7 @@
   self.tableView.rowHeight = UITableViewAutomaticDimension;
   self.tableView.estimatedRowHeight = 70;
   [super loadView];
+  self.title = @"Kygo";
   
   UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
   UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:effect];
@@ -129,8 +130,10 @@
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
     self.progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(_updateProgress:) userInfo:nil repeats:YES];
-    [self.progressOverlayView setPlaying:YES];
   }];
+  [self.progressOverlayView setPlaying:YES];
+  [self.progressOverlayView setTrack:track];
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

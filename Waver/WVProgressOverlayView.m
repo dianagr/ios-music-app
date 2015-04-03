@@ -8,7 +8,10 @@
 
 #import "WVProgressOverlayView.h"
 
+#import "WVTrack.h"
+
 @interface WVProgressOverlayView ()
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *togglePlayButton;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 @end
@@ -27,6 +30,10 @@
 
 - (void)setProgress:(CGFloat)progress {
   [self.progressView setProgress:progress animated:YES];
+}
+
+- (void)setTrack:(NSDictionary *)track {
+  self.titleLabel.text = track[[WVTrack titleKey]];
 }
 
 @end
