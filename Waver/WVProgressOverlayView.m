@@ -10,6 +10,7 @@
 
 @interface WVProgressOverlayView ()
 @property (weak, nonatomic) IBOutlet UIButton *togglePlayButton;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 @end
 
 @implementation WVProgressOverlayView
@@ -20,7 +21,12 @@
 }
 
 - (void)setPlaying:(BOOL)playing {
-  self.togglePlayButton.titleLabel.text = playing ? @"Stop" : @"Play";
+  NSString *title = playing ? @"Stop" : @"Play";
+  [self.togglePlayButton setTitle:title forState:UIControlStateNormal];
+}
+
+- (void)setProgress:(CGFloat)progress {
+  [self.progressView setProgress:progress animated:YES];
 }
 
 @end

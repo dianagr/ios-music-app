@@ -76,7 +76,7 @@
                                                         <constraint firstAttribute="width" constant="70" id="4ip-uR-kca"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.42367727389999998" green="0.46829174880000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.44838213360938128" green="0.71134412240291223" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -188,53 +188,90 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPy-hB-crX">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <state key="normal" title="Button">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="C4Z-Mb-MrY"/>
+                                            <constraint firstAttribute="height" constant="30" id="zzc-uw-sOl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="tintColor" red="0.44838213360000001" green="0.7113441224" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Select Track">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="C4Z-Mb-MrY"/>
+                                                <exclude reference="zzc-uw-sOl"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="C4Z-Mb-MrY"/>
+                                                <include reference="zzc-uw-sOl"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="didTapTogglePlayButton:" destination="gld-vG-olg" eventType="touchUpInside" id="RXx-K5-dSQ"/>
                                         </connections>
                                     </button>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Wz-va-wt7">
+                                        <rect key="frame" x="0.0" y="-2" width="150" height="2"/>
+                                    </progressView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.38097274853424035" green="0.37461220047006005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="XPy-hB-crX" secondAttribute="centerX" id="8MH-ZE-vyR"/>
-                                    <constraint firstAttribute="centerY" secondItem="XPy-hB-crX" secondAttribute="centerY" id="I5K-Pb-sSI"/>
-                                    <constraint firstAttribute="height" constant="92" id="Zm8-QW-DV1"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Wz-va-wt7" secondAttribute="bottom" constant="15" id="TEb-Vc-gks"/>
+                                    <constraint firstAttribute="height" constant="80" id="VDk-vQ-6NT"/>
+                                    <constraint firstItem="0Wz-va-wt7" firstAttribute="top" secondItem="XPy-hB-crX" secondAttribute="bottom" constant="11" id="cP9-yd-F2J"/>
+                                    <constraint firstAttribute="centerX" secondItem="XPy-hB-crX" secondAttribute="centerX" id="dWg-Gd-lLp"/>
+                                    <constraint firstItem="XPy-hB-crX" firstAttribute="top" secondItem="gld-vG-olg" secondAttribute="top" constant="22" id="j6R-5Y-xwa"/>
+                                    <constraint firstItem="0Wz-va-wt7" firstAttribute="leading" secondItem="gld-vG-olg" secondAttribute="leading" constant="58" id="pyT-4e-zfn"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Wz-va-wt7" secondAttribute="trailing" constant="58" id="qbr-xn-eEu"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="XPy-hB-crX"/>
+                                        <exclude reference="0Wz-va-wt7"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="Zm8-QW-DV1"/>
-                                        <exclude reference="8MH-ZE-vyR"/>
-                                        <exclude reference="I5K-Pb-sSI"/>
+                                        <exclude reference="VDk-vQ-6NT"/>
+                                        <exclude reference="TEb-Vc-gks"/>
+                                        <exclude reference="cP9-yd-F2J"/>
+                                        <exclude reference="pyT-4e-zfn"/>
+                                        <exclude reference="qbr-xn-eEu"/>
+                                        <exclude reference="dWg-Gd-lLp"/>
+                                        <exclude reference="j6R-5Y-xwa"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="XPy-hB-crX"/>
+                                        <include reference="0Wz-va-wt7"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="Zm8-QW-DV1"/>
-                                        <include reference="8MH-ZE-vyR"/>
-                                        <include reference="I5K-Pb-sSI"/>
+                                        <include reference="VDk-vQ-6NT"/>
+                                        <include reference="TEb-Vc-gks"/>
+                                        <include reference="cP9-yd-F2J"/>
+                                        <include reference="pyT-4e-zfn"/>
+                                        <include reference="qbr-xn-eEu"/>
+                                        <include reference="dWg-Gd-lLp"/>
+                                        <include reference="j6R-5Y-xwa"/>
                                     </mask>
                                 </variation>
                                 <connections>
+                                    <outlet property="progressView" destination="0Wz-va-wt7" id="274-xI-OzV"/>
                                     <outlet property="togglePlayButton" destination="XPy-hB-crX" id="g2u-lZ-Dpw"/>
                                 </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hgA-Sp-yvY" firstAttribute="top" secondItem="gld-vG-olg" secondAttribute="bottom" id="GzC-oO-ClF"/>
+                            <constraint firstAttribute="trailing" secondItem="gld-vG-olg" secondAttribute="trailing" id="IQI-q2-jAP"/>
                             <constraint firstItem="eIY-LQ-Xf1" firstAttribute="height" secondItem="5PD-iI-gsy" secondAttribute="height" id="KJX-S8-bVC"/>
                             <constraint firstAttribute="centerX" secondItem="eIY-LQ-Xf1" secondAttribute="centerX" id="M8m-ja-3Ss"/>
+                            <constraint firstItem="gld-vG-olg" firstAttribute="leading" secondItem="5PD-iI-gsy" secondAttribute="leading" id="R8T-zh-tQs"/>
                             <constraint firstItem="eIY-LQ-Xf1" firstAttribute="width" secondItem="5PD-iI-gsy" secondAttribute="width" id="TsY-6i-8yD"/>
-                            <constraint firstItem="gld-vG-olg" firstAttribute="leading" secondItem="5PD-iI-gsy" secondAttribute="leadingMargin" constant="-16" id="q6l-88-stj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gld-vG-olg" secondAttribute="trailing" constant="-16" id="yVE-ut-vPx"/>
+                            <constraint firstItem="hgA-Sp-yvY" firstAttribute="top" secondItem="gld-vG-olg" secondAttribute="bottom" id="uSk-v8-km1"/>
                             <constraint firstAttribute="centerY" secondItem="eIY-LQ-Xf1" secondAttribute="centerY" id="yfi-fr-1JO"/>
                         </constraints>
                         <variation key="default">
@@ -247,9 +284,9 @@
                                 <exclude reference="M8m-ja-3Ss"/>
                                 <exclude reference="TsY-6i-8yD"/>
                                 <exclude reference="yfi-fr-1JO"/>
-                                <exclude reference="q6l-88-stj"/>
-                                <exclude reference="yVE-ut-vPx"/>
-                                <exclude reference="GzC-oO-ClF"/>
+                                <exclude reference="IQI-q2-jAP"/>
+                                <exclude reference="R8T-zh-tQs"/>
+                                <exclude reference="uSk-v8-km1"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -262,15 +299,14 @@
                                 <include reference="M8m-ja-3Ss"/>
                                 <include reference="TsY-6i-8yD"/>
                                 <include reference="yfi-fr-1JO"/>
-                                <include reference="q6l-88-stj"/>
-                                <include reference="yVE-ut-vPx"/>
-                                <include reference="GzC-oO-ClF"/>
+                                <include reference="IQI-q2-jAP"/>
+                                <include reference="R8T-zh-tQs"/>
+                                <include reference="uSk-v8-km1"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="progressOverlayView" destination="gld-vG-olg" id="Uwm-FD-tcz"/>
-                        <outlet property="progressOverlayViewBottomConstraint" destination="GzC-oO-ClF" id="ayI-0d-m42"/>
                         <outlet property="tableView" destination="eIY-LQ-Xf1" id="9TN-rq-vco"/>
                     </connections>
                 </viewController>

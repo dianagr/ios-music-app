@@ -19,4 +19,6 @@
 
 - (void)setPlaying:(BOOL)playing;
 
+- (void)setProgress:(CGFloat)progress;
+
 @end

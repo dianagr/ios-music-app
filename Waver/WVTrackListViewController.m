@@ -36,6 +36,15 @@
   self.tableView.rowHeight = UITableViewAutomaticDimension;
   self.tableView.estimatedRowHeight = 70;
   [super loadView];
+  
+  UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+  UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:effect];
+  blurView.translatesAutoresizingMaskIntoConstraints = NO;
+  [self.progressOverlayView insertSubview:blurView atIndex:0];
+  
+  NSDictionary *views = NSDictionaryOfVariableBindings(blurView);
+  [self.progressOverlayView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[blurView]|" options:0 metrics:nil views:views]];
+  [self.progressOverlayView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[blurView]|" options:0 metrics:nil views:views]];
 }
 
 - (void)viewDidLoad {
@@ -71,7 +80,7 @@
 }
 
 - (void)_updateProgress:(NSTimer *)timer {
-  
+  [self.progressOverlayView setProgress:(self.audioPlayer.currentTime / self.audioPlayer.duration)];
 }
 
 #pragma mark WVProgressOverlayViewDelegate
@@ -109,7 +118,7 @@
   NSString *streamURL = track[[WVTrack streamURLKey]];
   [self.audioPlayer stop];
   self.audioPlayer = nil;
-//  [self.progressUpdateTimer invalidate];
+  [self.progressUpdateTimer invalidate];
   SCAccount *account = [SCSoundCloud account];
   [SCRequest performMethod:SCRequestMethodGET onResource:[NSURL URLWithString:streamURL] usingParameters:nil withAccount:account sendingProgressHandler:nil responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error) {
     NSError *playerError;
@@ -119,7 +128,7 @@
     }
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
-//    self.progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(_updateProgress:) userInfo:nil repeats:YES];
+    self.progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(_updateProgress:) userInfo:nil repeats:YES];
     [self.progressOverlayView setPlaying:YES];
   }];
 }
