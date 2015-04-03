@@ -61,7 +61,7 @@
     NSInteger index = [self.tracks indexOfObject:self.currentTrack];
     if (index != NSNotFound) {
       NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-      [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+      [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }
   });
 }
@@ -103,7 +103,7 @@
     }
     [self.audioPlayer prepareToPlay];
     [self.audioPlayer play];
-    self.progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(_updateProgress:) userInfo:nil repeats:YES];
+    self.progressUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(_updateProgress:) userInfo:nil repeats:YES];
   }];
 }
 
